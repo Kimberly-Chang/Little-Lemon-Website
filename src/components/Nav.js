@@ -1,39 +1,42 @@
+import { Link } from 'react-router-dom';
 import logo from "../img/logo.png";
 
 const Nav = () => {
     const navStyle = {
         padding: "1% 20%",
+        backgroundColor: "#EDEFEE",
     };
     const logoImgStyle = {
-        width: "200px",
-    }
+        width: "10vw",
+    };
     const navUlStyle = {
         display: "flex",
         listStyle: "none",
         textAlign: "center",
-        alignItems: "stretch",
+        alignItems: "center",
         justifyContent: "space-between",
         padding: "0",
-    }
-    const navAStyle = {
-        display: "grid",
+    };
+    const navLiStyle = {
+    };
+    const navLinkStyle = {
         padding: "1vmin",
-        color: "#000000",
-        fontSize: "18px",
+        color: "#333333",
+        fontSize: "18rem",
         textDecoration: "none",
         fontWeight: "bold",
-    }
+    };
 
     return (
         <nav style={navStyle}>
             <ul style={navUlStyle}>
                 <img src={logo} alt="logo" style={logoImgStyle} />
-                <li><a href="/" class="active" style={navAStyle}>HOME</a></li>
-                <li><a href="/about" style={navAStyle}>ABOUT</a></li>
-                <li><a href="/menu" style={navAStyle}>MENU</a></li>
-                <li><a href="/reserve" style={navAStyle}>RESERVATIONS</a></li>
-                <li><a href="/order" style={navAStyle}>ORDER ONLINE</a></li>
-                <li><a href="/login" style={navAStyle}>LOGIN</a></li>
+                <li style={navLiStyle}><Link to="/" className="nav-item" style={navLinkStyle}>HOME</Link></li>
+                <li style={navLiStyle}><Link to="/about" className="nav-item" style={navLinkStyle}>ABOUT</Link></li>
+                <li style={navLiStyle}><Link to="/menu" className="nav-item" style={navLinkStyle}>MENU</Link></li>
+                <li style={navLiStyle}><Link to="/booking" className="nav-item" style={navLinkStyle}>RESERVATIONS</Link></li>
+                <li style={navLiStyle}><Link to="/order" className="nav-item" style={navLinkStyle}>ORDER ONLINE</Link></li>
+                <li style={navLiStyle}><Link to="/login" className="nav-item" style={navLinkStyle}>LOGIN</Link></li>
             </ul>
         </nav>
     );
