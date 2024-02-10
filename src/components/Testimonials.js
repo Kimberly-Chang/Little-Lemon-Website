@@ -32,23 +32,10 @@ const reviews = [
 ];
 
 const Testimonials = () => {
-    const testimonialsBoxStyle = {
-        padding: "40rem 20%",
-        backgroundColor: "#495E57",
-    };
-    const headingStyle = {
-        textAlign: "center",
-        color: "#EDEFEE",
-    };
-    const testimonialsReviewBoxStyle = {
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-    };
-
     return (
-        <div className="testimonialsBox" style={testimonialsBoxStyle}>
-            <h4 style={headingStyle}>Testimonials</h4>
-            <div className="testimonialsReviewBox" style={testimonialsReviewBoxStyle}>
+        <div className="testimonials-box">
+            <h4>Testimonials</h4>
+            <div className="testimonials-review-box">
                 {reviews.map((reviews) => (
                     <TestimonialCard 
                         key={reviews.id}

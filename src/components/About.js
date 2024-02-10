@@ -1,33 +1,12 @@
 import brothers from "../img/Mario_and_Adrian.jpg";
 
 const About = () => {
-    const aboutBoxStyle = {
-        padding: "40rem 20%",
-        display: "grid",
-        gridTemplateColumns: "2fr 1fr",
-        backgroundColor: "#EDEFEE",
-        color: "#495E57",
-    };
-    const aboutElementStyle = {
-        padding: "",
-        alignSelf: "stretch",
-    };
-    const pStyle = {
-        padding: "10rem 0",
-        color: "#333333",
-    }
-    const imgStyle = {
-        maxWidth: "100%",
-        display: "block",
-        margin: "0 50%",
-    }
-
     return (
-        <div className="aboutBox" style={aboutBoxStyle}>
-            <div className="aboutElement" style={aboutElementStyle}>
+        <div className="about-box">
+            <div className="about-element">
                 <h1>Little Lemon</h1>
                 <h2>Chicago</h2>
-                <p style={pStyle}>
+                <p>
                     Based in Chicago, Illinois, Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. 
                     The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. 
                     The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day.
@@ -37,8 +16,8 @@ const About = () => {
                     Adrian does all the marketing for the restaurant and led the effort to expand the menu beyond classic Italian to incorporate additional cuisines from the Mediterranean region.
                 </p>
             </div>
-            <div className="aboutElement" style={aboutElementStyle}>
-                <img src={brothers} alt="Mario and Adrian" style={imgStyle} />
+            <div className="about-element">
+                <img src={brothers} alt="Mario and Adrian" />
             </div>
         </div>
     );

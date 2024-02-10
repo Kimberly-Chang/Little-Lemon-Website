@@ -1,38 +1,300 @@
-.App {
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Markazi Text', serif;
+  font-size: 0.1vmin;
+}
+h1 { /* display title */
+  font-size: 64rem;
+  font-weight: 500;  /* medium */
+}
+h2 { /* sub title */
+  font-size: 40rem;
+}
+h3 { /* lead text */
+  font-family: 'Karla', sans-serif;
+  font-size: 18rem;
+}
+h4 { /* section title */
+  font-family: 'Karla', sans-serif;
+  font-size: 20rem;
+  font-weight: 900; /* extra bold */
+}
+h5 { /* section categories */
+  font-family: 'Karla', sans-serif;
+  font-size: 16rem;
+  font-weight: 900; /* extra bold */
+}
+h6 { /* card title */
+  font-family: 'Karla', sans-serif;
+  font-size: 18rem;
+  font-weight: 700; /* bold */
+}
+p { /* paragraph text */
+  font-family: 'Karla', sans-serif;
+  font-size: 16rem;
+  color: #495E57;
+  line-height: 1.5;
+}
+span { /* highlight text */
+  font-family: 'Karla', sans-serif;
+  font-size: 16rem;
+  font-weight: 600; /* medium */
+}
+
+/* NAV BAR */
+nav {
+  padding: 1% 20%;
+  background-color: #FFFFFF;
+}
+nav ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
+  list-style: none;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-logo {
+  width: 10vw;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.nav-link {
+  padding: 1vmin;
+  font-size: 18rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333333;
+  &:hover, &:active {
+    color: #F4CE14;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* FOOTER */
+footer {
+  padding: 1% 20%;
+  display: flex;
+  background-color: #FFFFFF;
+}
+footer ul {
+  font-size: 16rem;
+  font-weight: 700;
+  list-style: none;
+}
+footer li {
+  font-size: 16rem;
+  font-weight: 400;
+}
+.footer-logo {
+  height: 160rem;
+}
+.footer-section {
+  padding: 0 5%;
+  font-size: 16rem;
+}
+.footer-link {
+  padding: 0;
+  font-size: 16rem;
+  text-decoration: none;
+  color: #333333;
+  &:hover, &:active {
+    color: #F4CE14;
+  }
+}
+.footer-email {
+  font-size: 16rem;
+  color: #495E57;
+  &:visited {
+    color: #333333;
+  }
+  &:hover, &:active {
+    color: #F4CE14;
+  }
+}
+
+/* HERO SECTION */
+.hero-box {
+  padding: 40rem 20%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: linear-gradient(#495E57 65%, #EDEFEE 35%);
+}
+.hero-element {
+  border-radius: 16px;
+  color: #F4CE14;
+}
+.hero-box img {
+  border-radius: 16px;
+  margin: 0 30%;
+  max-width: 100%;
+  width: 40vmin;
+  height: 50vmin;
+  object-fit: cover;
+}
+.hero-box p {
+  padding: 10rem 0;
+  color: #EDEFEE;
+}
+.hero-box button {
+  border: none;
+  border-radius: 16px;
+  padding: 10rem 20rem;
+  font-size: 20rem;
+  font-weight: 700;
+  background-color: #F4CE14;
+  &:hover {
+    background-color: #EDEFEE;
+    color: #333333;
+  }
+  &:active {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+}
+
+/* HIGHLIGHTS */
+.highlights-box {
+  padding: 40rem 20%;
+  background-color: #EDEFEE;
+}
+.highlights-title-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.highlights-button {
+  text-align: right;
+}
+.highlights-button button {
+  border: none;
+  border-radius: 16px;
+  padding: 10rem 20rem;
+  font-size: 20rem;
+  font-weight: 700;
+  background-color: #F4CE14;
+  &:hover {
+    background-color: #EDEFEE;
+    color: #333333;
+  }
+  &:active {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+}
+.highlights-menu-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* MENU CARD */
+.menu-card {
+  border-radius: 16px;
+  margin: 10rem 10%;
   display: flex;
   flex-direction: column;
+  background-color: #FFFFFF;
+}
+.menu-card-element {
+  padding: 1rem 5%;
+}
+.menu-card-title {
+  padding-top: 10rem;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.menu-card-price {
+  text-align: right;
+  flex: 50%;
+}
+.menu-card img {
+  border-radius: 16px 16px 0 0;
+  max-width: 100%;
+  width: 40vmin;
+  height: 20vmin;
+  object-fit: cover;
+}
+.menu-card p {
+  padding: 10rem 0;
+}
+.menu-card button {
+  border: none;
+  padding: 10rem 0;
+  font-size: 16rem;
+  font-weight: 600;
+  background-color: #FFFFFF;
+  &:hover {
+    color: #495E57;
+  }
+  &:active {
+    color: #F4CE14;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+/* TESTIMONIALS */
+.testimonials-box {
+  padding: 40rem 20%;
+  background-color: #495E57;
+}
+.testimonials-review-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.testimonials-box h4 {
+  text-align: center;
+  color: #EDEFEE;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* TESTIMONIAL CARD */
+.testimonial-card {
+  border-radius: 16px;
+  margin: 10%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+}
+.testimonial-card-element {
+  padding: 5rem 0;
+}
+.testimonial-card-reviewer {
+  padding-top: 10rem;
+  display: flex;
+  align-items: center;
+}
+.testimonial-card-stars1 {
+  color: #F4CE14;
+}
+.testimonial-card-stars2 {
+  color: #333333;
+}
+.testimonial-card img {
+  border-radius: 16px 16px 0 0;
+  max-width: 50%;
+  object-fit: cover;
+}
+.testimonial-card p {
+  color: #333333;
+}
+
+/* ABOUT */
+.about-box {
+  padding: 40rem 20%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: #EDEFEE;
+  color: #495E57;
+}
+.about-element {
+  align-self: stretch;
+}
+.about-box p {
+  padding: 10rem 0;
+  color: #333333;
+}
+.about-box img {
+  margin: 0 50%;
+  max-width: 100%;
+  display: block;
+}
+
+/* BOOKING */
+.booking-box {
+  padding: 40rem 20%;
 }

@@ -23,37 +23,13 @@ const menuItems = [
 ];
 
 const Highlights = () => {
-    const highlightsBoxStyle = {
-        padding: "40rem 20%",
-        background: "#EDEFEE",
-    };
-    const highlightsTitleBox = {
-        display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
-    };
-    const highlightsButtonStyle = {
-        textAlign: "right",
-    }
-    const buttonStyle = {
-        padding: "10rem 20rem",
-        border: "none",
-        borderRadius: "16px",
-        backgroundColor: "#F4CE14",
-        fontSize: "20rem",
-        fontWeight: "700",
-    };
-    const highlightsMenuBoxStyle = {
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)",
-    };
-
     return (
-        <div className="highlightsBox" style={highlightsBoxStyle}>
-            <div className="highlightsTitleBox" style={highlightsTitleBox}>
+        <div className="highlights-box">
+            <div className="highlights-title-box">
                 <h2>This week's specials!</h2>
-                <div className="highlightsButton" style={highlightsButtonStyle}><Link to="/order"><button style={buttonStyle}>Order Online</button></Link></div>
+                <div className="highlights-button"><Link to="/order"><button>Order Online</button></Link></div>
             </div>
-            <div className="highlightsMenuBox" style={highlightsMenuBoxStyle}>
+            <div className="highlights-menu-box">
                 {menuItems.map((menuItems) => (
                     <MenuCard 
                         key={menuItems.title}
