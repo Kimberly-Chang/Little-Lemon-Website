@@ -6,7 +6,7 @@ const TestimonialCard = ({rating, name, description, imgSrc}) => {
     for (var i = 0; i < rating; i++) {
         stars1 += "★";
     }
-    for (var i = 0; i < (5-rating); i++) {
+    for (i = 0; i < (5-rating); i++) {
         stars2 += "★";
     }
 
