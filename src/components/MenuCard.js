@@ -10,8 +10,8 @@ const MenuCard = ({title, price, description, imgSrc}) => {
     };
     const imgStyle = {
         maxWidth: "100%",
-        width: "30vw",
-        height: "25vh",
+        width: "40vmin",
+        height: "20vmin",
         objectFit: "cover",
         borderRadius: "16px 16px 0 0",
     };

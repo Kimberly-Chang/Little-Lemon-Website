@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import MenuCard from "./MenuCard";
 
 const menuItems = [
@@ -26,6 +27,21 @@ const Highlights = () => {
         padding: "40rem 20%",
         background: "#EDEFEE",
     };
+    const highlightsTitleBox = {
+        display: "grid",
+        gridTemplateColumns: "repeat(2, 1fr)",
+    };
+    const highlightsButtonStyle = {
+        textAlign: "right",
+    }
+    const buttonStyle = {
+        padding: "10rem 20rem",
+        border: "none",
+        borderRadius: "16px",
+        backgroundColor: "#F4CE14",
+        fontSize: "20rem",
+        fontWeight: "700",
+    };
     const highlightsMenuBoxStyle = {
         display: "grid",
         gridTemplateColumns: "repeat(3, 1fr)",
@@ -33,7 +49,10 @@ const Highlights = () => {
 
     return (
         <div className="highlightsBox" style={highlightsBoxStyle}>
-            <h2>This week's specials!</h2>
+            <div className="highlightsTitleBox" style={highlightsTitleBox}>
+                <h2>This week's specials!</h2>
+                <div className="highlightsButton" style={highlightsButtonStyle}><Link to="/order"><button style={buttonStyle}>Order Online</button></Link></div>
+            </div>
             <div className="highlightsMenuBox" style={highlightsMenuBoxStyle}>
                 {menuItems.map((menuItems) => (
                     <MenuCard 
