@@ -1,7 +1,13 @@
 
 const Booking = () => {
+    const bookingStyle = {
+        padding: "20rem 20%",
+    };
+
     return (
-        <p>Booking Page</p>
+        <div style={bookingStyle}>
+            <p>Booking Page</p>
+        </div>
     );
 }
 

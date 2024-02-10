@@ -5,8 +5,8 @@ const About = () => {
         padding: "40rem 20%",
         display: "grid",
         gridTemplateColumns: "2fr 1fr",
-        backgroundColor: "#FBDABB",
-        color: "#EE9972",
+        backgroundColor: "#EDEFEE",
+        color: "#495E57",
     };
     const aboutElementStyle = {
         padding: "",
@@ -38,7 +38,7 @@ const About = () => {
                 </p>
             </div>
             <div className="aboutElement" style={aboutElementStyle}>
-                <img src={brothers} style={imgStyle} />
+                <img src={brothers} alt="Mario and Adrian" style={imgStyle} />
             </div>
         </div>
     );

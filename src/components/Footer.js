@@ -5,7 +5,7 @@ const Footer = () => {
     const footerStyle = {
         padding: "1% 20%",
         display: "flex",
-        backgroundColor: "#EDEFEE",
+        backgroundColor: "#FFFFFF",
     };
     const footerDivStyle = {
         // display: "grid",
@@ -20,7 +20,7 @@ const Footer = () => {
         fontSize: "16rem",
         fontWeight: "700",
     }
-    const footerIlStyle = {
+    const footerLiStyle = {
         fontSize: "16rem",
         fontWeight: "400",
     }
@@ -36,32 +36,32 @@ const Footer = () => {
 
     return (
         <footer style={footerStyle}>
-            <img src={logo} alt="logo" style={footerImgStyle} />
+            <Link to="/"><img src={logo} alt="logo" style={footerImgStyle} /></Link>
             <div style={footerDivStyle}>
                 <ul style={footerUlStyle}>
                     Doormat Navigation
-                    <li style={footerIlStyle}><Link to="/" style={footerLinkStyle}>Home</Link></li>
-                    <li style={footerIlStyle}><Link to="/about" style={footerLinkStyle}>About</Link></li>
-                    <li style={footerIlStyle}><Link to="/menu" style={footerLinkStyle}>Menu</Link></li>
-                    <li style={footerIlStyle}><Link to="/booking" style={footerLinkStyle}>Reservations</Link></li>
-                    <li style={footerIlStyle}><Link to="/order" style={footerLinkStyle}>Order Online</Link></li>
-                    <li style={footerIlStyle}><Link to="/login" style={footerLinkStyle}>Login</Link></li>
+                    <li style={footerLiStyle}><Link to="/" style={footerLinkStyle}>Home</Link></li>
+                    <li style={footerLiStyle}><Link to="/about" style={footerLinkStyle}>About</Link></li>
+                    <li style={footerLiStyle}><Link to="/menu" style={footerLinkStyle}>Menu</Link></li>
+                    <li style={footerLiStyle}><Link to="/booking" style={footerLinkStyle}>Reservations</Link></li>
+                    <li style={footerLiStyle}><Link to="/order" style={footerLinkStyle}>Order Online</Link></li>
+                    <li style={footerLiStyle}><Link to="/login" style={footerLinkStyle}>Login</Link></li>
                 </ul>
             </div>
             <div style={footerDivStyle}>
                 <ul style={footerUlStyle}>
                     Contact
-                    <li style={footerIlStyle}>123 Main St., Chicago, IL 60601</li>
-                    <li style={footerIlStyle}>312-729-0469</li>
-                    <li style={footerIlStyle}><a href="mailto:info@littlelemon.com" style={emailStyle}>info@littelemon.com</a></li>
+                    <li style={footerLiStyle}>123 Main St., Chicago, IL 60601</li>
+                    <li style={footerLiStyle}>312-729-0469</li>
+                    <li style={footerLiStyle}><a href="mailto:info@littlelemon.com" style={emailStyle}>info@littelemon.com</a></li>
                 </ul>
             </div>
             <div style={footerDivStyle}>
                 <ul style={footerUlStyle}>
                     Social Media Links
-                    <li style={footerIlStyle}><a href="https://www.instagram.com/littlelemonfood/" style={footerLinkStyle}>Instagram</a></li>
-                    <li style={footerIlStyle}>Phone Number</li>
-                    <li style={footerIlStyle}>E-Mail</li>
+                    <li style={footerLiStyle}><a href="https://www.facebook.com/littlelemonfood/" style={footerLinkStyle}>Facebook</a></li>
+                    <li style={footerLiStyle}><a href="https://www.instagram.com/littlelemonfood/" style={footerLinkStyle}>Instagram</a></li>
+                    <li style={footerLiStyle}><a href="https://www.tiktok.com/@littlelemonfood/" style={footerLinkStyle}>TikTok</a></li>
                 </ul>
             </div>
         </footer>
