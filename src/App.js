@@ -1,5 +1,5 @@
 import './App.css';
-import {Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 import About from "./components/About";
@@ -8,6 +8,7 @@ import Booking from "./components/Booking";
 import Order from "./components/Order";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
+import BookingConfirmation from './components/BookingConfirmation';
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
           <Route path="/" element ={<Main />} />
           <Route path="/about" element = {<About />} />
           <Route path="/menu" element = {<Menu />} />
-          <Route path="/booking" element={<Booking />} />
+          <Route path="/booking" element={<Booking />}/>
           <Route path="/order" element = {<Order />} />
           <Route path="/login" element = {<Login />} />
+          <Route path="/confirmed" element = {<BookingConfirmation />} />
         </Routes>
         <Footer />
       </main>
