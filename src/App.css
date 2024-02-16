@@ -356,6 +356,12 @@ label sup {
 .booking-box p {
   color: #EDEFEE;
 }
+.date-error, .time-error, .guests-error, .occasion-error {
+  margin: 0.2vh 0;
+  font-size: 1.8vh;
+  color: #FF0000;
+  text-shadow: -1px -1px 0 #6A4D47, 1px -1px 0 #6A4D47, -1px 1px 0 #6A4D47, 1px 1px 0 #6A4D47;
+}
 
 /* MENU */
 .menu-box {

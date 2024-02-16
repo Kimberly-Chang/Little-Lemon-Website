@@ -3,7 +3,8 @@
 const Order = () => {
     return (
         <div className="order-box">
-            <p>Feature Still Under Development :(</p>
+            <h4>Order Online!</h4>
+            <p>Under construction! Order with us soon!</p>
         </div>
     );
 }

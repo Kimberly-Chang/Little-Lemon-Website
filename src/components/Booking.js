@@ -28,11 +28,15 @@ const Booking = () => {
     const [time, setTime] = useState(availableTimes.times[0]);
     const [guests, setGuests] = useState("1");
     const [occasion, setOccasion] = useState("birthday");
+    const [errorMessage, setErrorMessage] = useState({date: "", time: "", guests: "", occasion: ""})
 
     /* FORM FUNCTIONS */
     const getIsFormValid = () => {
+        let [year, month, day] = String(date).split('-');
+        let [todayYear, todayMonth, todayDay] = String(today).split('-');
+        let isInPast = (year < todayYear) || (year === todayYear && ((month < todayMonth) || (month === todayMonth && day < todayDay)));
         return (
-            date && time && guests && occasion
+            date && !(isInPast) && time && guests && (guests > 0 && guests < 11) && occasion
         );
     };
     const clearForm = () => {
@@ -45,10 +49,11 @@ const Booking = () => {
         e.preventDefault();
         const values = {date: date, time: time, guests: guests, occasion: occasion};
         console.log(values);
-        submitAPI(values);
-        clearForm();
-        // navigate("/confirmed");
-        navigate("/confirmed",{state: values});
+        let successfulSubmit = submitAPI(values);
+        if (successfulSubmit) {
+            clearForm();
+            navigate("/confirmed", {state: values});
+        }
     };
 
     return (
@@ -62,19 +67,36 @@ const Booking = () => {
                             id="date"
                             type="date"
                             value={date}
+                            required
                             onChange={(e) => {
                                 setDate(e.target.value);
+                                let [year, month, day] = String(e.target.value).split('-');
+                                let [todayYear, todayMonth, todayDay] = String(today).split('-');
+                                let isInPast = (year < todayYear) || (year === todayYear && ((month < todayMonth) || (month === todayMonth && day < todayDay)));
+                                if (isInPast) {
+                                    setErrorMessage({...errorMessage, date: "Date cannot be in the past."});
+                                }
+                                else {
+                                    setErrorMessage({...errorMessage, date: ""});
+                                }
                                 dispatch({date: e.target.value, type: "update_times"});
                             }}
                         />
+                        <div className="date-error">{errorMessage.date}</div>
                     </div>
                     <div className="field">
                         <label htmlFor="time">Time<sup>*</sup></label>
-                        <select id="time" value={time} onChange={(e) => setTime(e.target.value)}>
+                        <select id="time" 
+                            value={time}
+                            required
+                            onChange={(e) => {
+                                setTime(e.target.value);
+                            }}>
                             {availableTimes.times.map((time) => (
-                                <option>{time}</option>
+                                <option key={time}>{time}</option>
                             ))}
                         </select>
+                        <div className="time-error">{errorMessage.time}</div>
                     </div>
                     <div className="field">
                         <label htmlFor="guests">Number of Guests<sup>*</sup></label>
@@ -84,18 +106,29 @@ const Booking = () => {
                             min="1"
                             max="10"
                             value={guests}
-                            onChange={(e) => setGuests(e.target.value)}
+                            required
+                            onChange={(e) => {
+                                setGuests(e.target.value);
+                                if (e.target.value < 1 || e.target.value > 10) {
+                                    setErrorMessage({...errorMessage, guests: "The number of guests must be between 1 and 10."});
+                                }
+                                else {
+                                    setErrorMessage({...errorMessage, guests: ""});
+                                }
+                            }}
                         />
+                        <div className="guests-error">{errorMessage.guests}</div>
                     </div>
                     <div className="field">
                         <label htmlFor="occasion">Occasion<sup>*</sup></label>
-                        <select id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+                        <select id="occasion" value={occasion} required onChange={(e) => setOccasion(e.target.value)}>
                             <option value="birthday">Birthday</option>
                             <option value="anniversary">Anniversary</option>
                             <option value="other">Other</option>
                         </select>
+                        <div className="occasion-error">{errorMessage.occasion}</div>
                     </div>
-                    <button type="submit" disabled={!getIsFormValid()}>Make Your Reservation</button>
+                    <button type="submit" aria-label="On Click" disabled={!getIsFormValid()}>Make Your Reservation</button>
                 </fieldset>
             </form>
         </div>

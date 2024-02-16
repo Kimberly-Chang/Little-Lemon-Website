@@ -1,9 +1,10 @@
-import MenuCard from "./MenuCard";
+// import MenuCard from "./MenuCard";
 
 const Menu = () => {
     return (
         <div className="menu-box">
-            <p>Come view our beautiful menu soon!</p>
+            <h4>Menu</h4>
+            <p>Under construction! Come view our beautiful menu soon!</p>
         </div>
     );
 }

@@ -2,6 +2,11 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import Booking from './components/Booking';
 import { fetchAPI } from "./utils/mockAPI.js";
 import { updateTimes, initializeTimes } from './components/Booking';
+const mockUsedNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+   ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockUsedNavigate,
+}));
 
 /* BOOKING TESTS */
 describe("Booking component tests", () => {
@@ -39,4 +44,37 @@ describe("Booking component tests", () => {
       const newState = updateTimes(state, action);
       expect(newState).toEqual(state);
   });
+  test('Cannot submit form (submit button disabled) with a date in the past', () => {
+    render(<Booking />);
+    const pastDate = "1990/01/01";
+    const dateInput = screen.getByLabelText(/Date */);
+    fireEvent.change(dateInput, { target: { value: pastDate } });
+
+    const submitButton = screen.getByRole("button");
+    expect(submitButton).toBeDisabled();
+  });
+  test('Cannot submit form (submit button disabled) with number of guests out of range (too small)', () => {
+    render(<Booking />);
+    const noGuests = "0";
+    const guestsInput = screen.getByLabelText(/Number of Guests */);
+    fireEvent.change(guestsInput, { target: { value: noGuests } });
+
+    const submitButton = screen.getByRole("button");
+    expect(submitButton).toBeDisabled();
+  });
+  test('Cannot submit form (submit button disabled) with number of guests out of range (too large)', () => {
+    render(<Booking />);
+    const tooManyGuests = "11";
+    const guestsInput = screen.getByLabelText(/Number of Guests */);
+    fireEvent.change(guestsInput, { target: { value: tooManyGuests } });
+
+    const submitButton = screen.getByRole("button");
+    expect(submitButton).toBeDisabled();
+  });
+  test('Can submit form with valid fields', () => {
+    render(<Booking />);
+    // The default selections for all fields are valid.
+    const submitButton = screen.getByRole("button");
+    expect(submitButton).not.toBeDisabled();
+  })
 })
