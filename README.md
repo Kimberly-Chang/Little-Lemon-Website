@@ -3,6 +3,11 @@ This project is a React app for a website for a fictitious restaurant called Lit
 
 ## Demonstration
 
+### Video Demonstration
+Here is a video demonstrating the website.
+
+https://github.com/Kimberly-Chang/Little-Lemon-Website/assets/60988113/5448c918-beb4-4854-928b-c31716a730f9
+
 ### Desktop
 Here is a screenshot of the full homepage on a desktop layout.
 ![homepage demo](./demo/demo_homepage.png)
