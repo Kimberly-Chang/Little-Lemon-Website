@@ -44,37 +44,37 @@ This is the footer. It use React Router Dom links for the footer doormat navigat
 
 The address, phone number, and e-mail are fake. The Instagram account is real (and likely created by Meta). The Facebook and TikTok pages do not actually exists, and the user handles are based on the Instagram account user handle.
 
-## Hero Section
+### Hero Section
 This is the hero section of the page. It contains the restaurant name and city in addition to an image of a person holding food, a short description, and a button that links to the Bookings/Reservations page.
 
-## Highlights
+### Highlights
 This is the highlights section, which shows "This week's specials."
 
 The menu items are displayed using a list of objects and displaying them with the `MenuCard` component.
 
-## Testimonials
+### Testimonials
 This is a testimonials/reviews section.
 
 The reviews are displayed using a list of object and displaying them with the `TestimonialCard` component.
 
-## About
+### About
 This is an about section that gives some information about the restaurant. The text is taken from provided text given for the final project of Meta's *HTML and CSS in depth* course.
 
-## Booking
+### Booking
 This is a page with a booking/reservation form. It has fields for the date, time, number of guests, and occasion. The date and number of guests have form validation that will display an error message if the input is invalid. The **Make a Reservation** button will also be disabled if not all form fields are valid; this is shown by the color darkening.
 
 With the default fields, the form is valid, but the fields can be changed to make it invalid.
 
-## Booking Confirmation
+### Booking Confirmation
 This is the booking confirmation page, which also displays the submitted information.
 
-## Menu
+### Menu
 Under construction!
 
-## Login
+### Login
 Under construction!
 
-## Order
+### Order
 Under construction!
 
 ## Available Scripts
