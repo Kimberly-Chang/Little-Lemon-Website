@@ -37,6 +37,9 @@ It uses React Router Dom to create the routes for all the pages. (Note that the 
 ### Styling (App.css)
 All the CSS styling is done in App.css. Each component has its unique classes to differentiate styling between components. The styling for each component have been grouped together in the same section.
 
+### React Jest Tests (App.test.js)
+These are the Jest tests for the Booking component. There are 8 tests: 1 generic test, 3 tests to determine if the API is being used properly, and 4 tests to determine if form validation is functioning.
+
 ## Components
 
 ### Nav
